@@ -70,6 +70,9 @@ function Layout(props) {
         <ListItem button component={Link} to="/transactions">
           <ListItemText primary="トランザクション" />
         </ListItem>
+        <ListItem button component={Link} to="/transactions/new">
+          <ListItemText primary="送金" />
+        </ListItem>
       </List>
     </div>
   )
