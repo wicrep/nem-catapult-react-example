@@ -4,7 +4,9 @@ import React from 'react'
 import Account from './pages/Account'
 import Home from './pages/Home'
 import Layout from './components/Layout'
-import NewTransaction from './pages/NewTransaction';
+import NewAccount from './pages/NewAccount'
+import NewTransaction from './pages/NewTransaction'
+import NewWallet from './pages/NewWallet'
 import RouteWithLayout from './components/RouteWithLayout'
 import Transactions from './pages/Transactions'
 
@@ -14,6 +16,8 @@ function App() {
       <Switch>
         <RouteWithLayout path="/transactions/new" layout={Layout} component={NewTransaction} />
         <RouteWithLayout path="/transactions" layout={Layout} component={Transactions} />
+        <RouteWithLayout path="/wallet/new" layout={Layout} component={NewWallet} />
+        <RouteWithLayout path="/account/new" layout={Layout} component={NewAccount} />
         <RouteWithLayout path="/account" layout={Layout} component={Account} />
         <RouteWithLayout extract path="/" layout={Layout} component={Home} />
       </Switch>
