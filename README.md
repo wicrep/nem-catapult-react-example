@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# nem-catapult-react-example
 
-## Available Scripts
+このレポジトリの紹介記事
 
-In the project directory, you can run:
+[https://coiners.jp/posts/684486524146](https://coiners.jp/posts/684486524146)
 
-### `npm start`
+## 利用しているライブラリ
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-  react: ^16.8.6 
+-  react-dom: ^16.8.6
+-  react-scripts: 3.0.1
+-  react-router-dom: ^5.0.1
+-  nem2-sdk: ^0.13.1
+-  rxjs: ^6.5.2
+-  @material-ui/core: ^4.3.1
+-  @material-ui/icons: ^4.2.1
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## dockerの起動
 
-### `npm test`
+このリポジトリはdockerのcatapult-service-bootstrapを利用して開発しています。あらかじめそちらのセットアップを完了しておいてください。
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+詳しくはこちらの記事を参照。
 
-### `npm run build`
+[Docker catapult-service-bootstrapの起動と動作確認
+](https://coiners.jp/posts/284251256389)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## セットアップ
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+node jsライブラリをインストール。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+yarn install
+```
 
-### `npm run eject`
+プロジェクトルートに`.env`ファイルを作成する。
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+touch .env
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`.env`に必要な環境変数を記述する。
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`REACT_APP_PRIVATE_KEY`はdockerのcataplut-api-serverと被らないように3001にする。
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`REACT_APP_PRIVATE_KEY`はnemesisユーザーのものを利用する。プライベートキーの確認はnem2-cliで登録してあれば、`nem2-cli profile list`でわかる。
 
-## Learn More
+`REACT_APP_NETWORK_GENERATION_HASH`は下のコマンドで帰ってきたjsonの中からgenerationHashの値をコピペする。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+curl http://localhost:3000/block/1
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`.env`
 
-### Code Splitting
+```bash
+PORT=3001
+REACT_APP_PRIVATE_KEY="nemesisユーザーのプライベートキー"
+REACT_APP_NETWORK_GENERATION_HASH="ジェネレーションハッシュ"
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## サーバーの起動
 
-### Analyzing the Bundle Size
+下のコマンドでサーバーを起動
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```bash
+yarn run start
+```
 
-### Making a Progressive Web App
+`http://localhost:3001`にアクセス。
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Enjoy NEM catapult with React!
