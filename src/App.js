@@ -1,12 +1,16 @@
+import { Switch, BrowserRouter as Router } from 'react-router-dom'
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
+import Layout from './components/Layout'
+import RouteWithLayout from './components/RouteWithLayout'
 
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={Home} />
+      <Switch>
+        <RouteWithLayout extract path="/" layout={Layout} component={Home} />
+      </Switch>
     </Router>
   )
 }
