@@ -5,11 +5,13 @@ import Account from './pages/Account'
 import Home from './pages/Home'
 import Layout from './components/Layout'
 import RouteWithLayout from './components/RouteWithLayout'
+import Transactions from './pages/Transactions';
 
 function App() {
   return (
     <Router>
       <Switch>
+        <RouteWithLayout path="/transactions" layout={Layout} component={Transactions} />
         <RouteWithLayout path="/account" layout={Layout} component={Account} />
         <RouteWithLayout extract path="/" layout={Layout} component={Home} />
       </Switch>
