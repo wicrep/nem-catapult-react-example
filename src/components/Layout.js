@@ -79,6 +79,9 @@ function Layout(props) {
         <ListItem button component={Link} to="/wallet/new">
           <ListItemText primary="ウォレット作成" />
         </ListItem>
+        <ListItem button component={Link} to="/monitoring">
+          <ListItemText primary="Txの監視" />
+        </ListItem>
       </List>
     </div>
   )

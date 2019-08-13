@@ -4,6 +4,7 @@ import React from 'react'
 import Account from './pages/Account'
 import Home from './pages/Home'
 import Layout from './components/Layout'
+import Monitoring from './pages/Monitoring';
 import NewAccount from './pages/NewAccount'
 import NewTransaction from './pages/NewTransaction'
 import NewWallet from './pages/NewWallet'
@@ -19,6 +20,7 @@ function App() {
         <RouteWithLayout path="/wallet/new" layout={Layout} component={NewWallet} />
         <RouteWithLayout path="/account/new" layout={Layout} component={NewAccount} />
         <RouteWithLayout path="/account" layout={Layout} component={Account} />
+        <RouteWithLayout path="/monitoring" layout={Layout} component={Monitoring} />
         <RouteWithLayout extract path="/" layout={Layout} component={Home} />
       </Switch>
     </Router>
