@@ -161,7 +161,7 @@ class Monitoring extends Component {
                     return (
                       <TableRow key={index}>
                         <TableCell>{row.recipient.address}</TableCell>
-                        <TableCell>{row.mosaics[0].amount.compact() / 1000000}</TableCell>
+                        <TableCell>{row.mosaics.map(mosaic => mosaic.amount.compact() / 1000000)}</TableCell>
                         <TableCell>{row.message.payload}</TableCell>
                         <TableCell>
                           {date._year +
@@ -206,7 +206,7 @@ class Monitoring extends Component {
                     return (
                       <TableRow key={index}>
                         <TableCell>{row.recipient.address}</TableCell>
-                        <TableCell>{row.mosaics[0].amount.compact() / 1000000}</TableCell>
+                        <TableCell>{row.mosaics.map(mosaic => mosaic.amount.compact() / 1000000)}</TableCell>
                         <TableCell>{row.message.payload}</TableCell>
                         <TableCell>
                           {date._year +

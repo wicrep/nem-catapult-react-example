@@ -121,7 +121,7 @@ class Transactions extends Component {
                         <TableCell>{row.recipient.address}</TableCell>
                         <TableCell>
                           {row.signer.publicKey === this.state.input.public_key ? '-' : '+'}
-                          {row.mosaics[0].amount.compact() / 1000000}
+                          {row.mosaics.map(mosaic => mosaic.amount.compact() / 1000000)}
                         </TableCell>
                         <TableCell>{row.message.payload}</TableCell>
                         <TableCell>
