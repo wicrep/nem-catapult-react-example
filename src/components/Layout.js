@@ -85,6 +85,9 @@ function Layout(props) {
         <ListItem button component={Link} to="/searchtx">
           <ListItemText primary="Txの検索" />
         </ListItem>
+        <ListItem button component={Link} to="/encryptmessage">
+          <ListItemText primary="メッセージの暗号化" />
+        </ListItem>
       </List>
     </div>
   )
