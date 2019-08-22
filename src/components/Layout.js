@@ -82,6 +82,9 @@ function Layout(props) {
         <ListItem button component={Link} to="/monitoring">
           <ListItemText primary="Txの監視" />
         </ListItem>
+        <ListItem button component={Link} to="/searchtx">
+          <ListItemText primary="Txの検索" />
+        </ListItem>
       </List>
     </div>
   )
