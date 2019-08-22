@@ -6546,10 +6546,10 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-nem2-sdk@^0.13.1:
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/nem2-sdk/-/nem2-sdk-0.13.1.tgz#d4c2312d1dc0bfd58e74d0b00ce502de3773a6af"
-  integrity sha512-sIN/RWR+BNDR1av8f0tstpC6mFpTaU0b9PKaXlvYlQQfHLvUQ25+boLUf1deV/XwnSdxRp6Y91yPkOAeV2MH1A==
+nem2-sdk@0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/nem2-sdk/-/nem2-sdk-0.13.0.tgz#ea5bea39e80a6c7dcb1ea1f8d8abae152bfcf4b2"
+  integrity sha512-UpmiadyIpBAfzd4antyjIRdmsmEhVCVoScEJVa8JUDpHd8KYzTc3p3aqsVj1DNLbZ7ngmBIkoHAaejevIdCaSQ==
   dependencies:
     bluebird "^3.5.5"
     crypto-js "^3.1.9-1"
